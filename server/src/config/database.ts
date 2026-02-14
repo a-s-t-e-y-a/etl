@@ -1,7 +1,10 @@
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
+import dns from 'dns';
 
 dotenv.config();
+
+dns.setDefaultResultOrder('ipv4first');
 
 const pool = new Pool({
   host: process.env.DB_HOST || 'localhost',
